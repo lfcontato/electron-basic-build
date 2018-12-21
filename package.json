@@ -1,0 +1,65 @@
+{
+  "name": "electron-basic-builder",
+  "version": "1.0.0",
+  "description": "Aplicação básica em Electron Builder",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "repository": "",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo",
+    "basic"
+  ],
+  "author": "@lfcontato",
+  "license": "MIT",
+  "build": {
+    "appId": "electronbasicbuilder",
+    "asar": true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },    
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "menuCategory": true,
+      "oneClick": false,
+      "perMachine": true,
+      "installerHeaderIcon": "build/icon.ico",
+      "allowToChangeInstallationDirectory": true,
+      "runAfterFinish": false
+      }    
+  },
+  "devDependencies": {
+    "electron": "^3.0.7",
+    "electron-builder": "^20.38.4"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
